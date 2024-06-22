@@ -1,9 +1,16 @@
 # scalr-vpc-dns
 #
 # Manages a DNS enabled VPC with subnets in every AZ of the region
-provider "aws" {
-region = "us-east-1"
+{
+  "provider": {
+    "aws": [
+      {
+        "region": "us-west-2"  # Replace with your desired region
+      }
+    ]
+  }
 }
+
 resource "aws_vpc" "scalr_vpc_dns" {
   cidr_block              = var.cidr
   enable_dns_support      = true
